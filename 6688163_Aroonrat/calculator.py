@@ -25,6 +25,13 @@ def divide(a: float, b: float) -> float:
     return a / b
 
 
+def calculate_velocity(distance: float, time: float) -> float:
+    """Calculate velocity given distance and time. Velocity = distance / time."""
+    if time == 0:
+        raise ValueError("Time cannot be zero")
+    return distance / time
+
+
 def main():
     """Interactive calculator interface."""
     print("Simple Calculator")
