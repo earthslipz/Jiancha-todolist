@@ -1,3 +1,9 @@
+def calculate_velocity(distance: float, time: float) -> float:
+    if time <= 0:
+        raise ValueError("Time must be greater than zero")
+    return distance / time
+
+
 def add(a, b):
     return a + b
 
@@ -43,3 +49,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
