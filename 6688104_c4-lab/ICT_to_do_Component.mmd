@@ -1,0 +1,23 @@
+C4Component
+title Component diagram for Web API
+
+Container_Boundary(api, "Web API (FastAPI)") {
+
+  Component(auth, "Authentication & Authorization")
+  Component(task, "Task Management")
+  Component(sync, "MyCourses Sync Orchestrator")
+  Component(client, "MyCourses Client")
+  Component(mapper, "Mapping Component")
+  Component(history, "Sync History")
+  Component(data, "Data Access")
+
+}
+
+Rel(auth, task, "Authorizes requests")
+Rel(task, data, "CRUD tasks")
+Rel(sync, client, "Calls MyCourses APIs")
+Rel(client, mapper, "Parses and maps JSON")
+Rel(mapper, sync, "Provides mapped task data")
+Rel(sync, history, "Records sync results")
+Rel(sync, data, "Reads/writes imported tasks")
+Rel(history, data, "Stores sync logs")
